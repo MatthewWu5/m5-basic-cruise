@@ -1,0 +1,20 @@
+.col-md-3 {
+    width: 25%;
+}
+
+.col-md-6 {
+    width: 50%;
+}
+
+.col-md-9 {
+    width: 75%;
+}
+
+.row {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.col-md-3, .col-md-6, .col-md-9 {
+    float: left;
+}

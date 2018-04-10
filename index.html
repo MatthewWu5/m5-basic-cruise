@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./responsive.css">
+    <script src="./lib/ajax.js"></script>
+    <script src="./lib/cruise.js"></script>
+</head>
+
+<body>
+    <div class="circle-border">
+        <div class="circle-icon"></div>
+        <div class="content-panel">
+            <div class="row">
+                <div class="agent-name col-md-6"></div>
+                <div class="rightTop-panel col-md-6">
+                    | <span>idle</span> | <span>192.168.1.2</span> | <span>/var/lib/cruise-agent</span>
+                </div>
+            </div>
+            
+            <div class="row">
+                <i class="plus"></i>
+                <span>|</span>
+                <div class="resource-container">
+                    <span>Resources:</span>
+                    <div class="resource">
+                        <span></span>
+                        <i class="remove"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="deny-container">
+            <i></i>
+            <a href="">Deny</a>
+        </div>
+    </div>
+    <script>
+        GetCruiseInfo(function (resp) {
+            console.log(resp)
+        })
+    </script>
+</body>
+
+</html>
