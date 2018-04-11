@@ -29,8 +29,10 @@
 
 ## To implement
 
-- [x] popup
+- [ ] popup
     1. add data to panel
+    2. remove btn
+- [ ] deny icon
 - [ ] switch tab to load data
 - [ ] switch category to filter data
 - [ ] makesure the ui in screen 1024, currently there is a issue
