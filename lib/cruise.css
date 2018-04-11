@@ -1,28 +1,210 @@
-.circle-border {
+/*agent css*/
+.agent-info-container {
     border-radius:10px;
     border: 1px solid black;
-    height: 60px;
-
-    background: green;
+    padding: 5px 10px;
+    position: relative;
+    /*min-width: 800px;*/
+    overflow: hidden;
+    background-color: #cce8b5;
+    margin: 20px 5px;
 }
 
-.circle-border.building {
-    background-color: yellow;
+.agent-info-container.building {
+    background-color: #fffbb9;
 }
 
 .circle-icon {
     border-radius:50%;
     width: 50px;
     height: 50px;
-    background-color: gray;
+    margin-top: 5px;
+    background-color: #929292;
+    float: left;
 }
 
 .content-panel {
-    margin-left: 50px;
-    margin-right: 20px;
+    margin: 5px 10px;
+    font-weight: bold;
+    float: left;
+    width: 90%;
+}
+
+/*single line*/
+.agent-name, .rightTop-panel {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.deny-container {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.resource-container, .resource {
+    display: inline-block;
+}
+
+/*plus icon*/
+.plus {
+    font-size: 25px;
+    font-weight: bold;
+    color: #161617;
+    position: absolute;
+    top: -4px;
+    left: 0px;
+    cursor: pointer;
+}
+
+/*i.plus {height:40px; width:40px; display:block; position:relative;} 
+
+.plus:before, .plus:after{content:''; height:2px; width:40px; display:block; background:#333; border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px; position:absolute; top:16px; left:0px;}
+
+.plus:after{height:40px; width:2px; top:0; left:16px; }*/
+
+.add-resource {
+    margin-left: 20px;
+}
+
+
+/*page container css*/
+.header, .content {
+    border: 2px solid black;
+}
+.header {
+    background-color: #606060;
+    height: 40px;
+}
+
+.header .text-agent, .header .circle-border {
+    margin-left: 10px;
+    margin-top: 7px;
+}
+
+.header .text-agent {
+    color: white;
+    float: left;
+    font-size: 25px;
+    margin-top: 5px;
+}
+
+.header .circle-border {
+    border-radius: 15px;
+    padding: 3px 11px;
+    border: 1px solid black;
+    float: left;
+    background-color: #999999;
+    width: 53px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.header div.circle-border.selected {
+    background-color: #dddddd;
+}
+
+.content {
+    margin-top: -7px !important;
+    height: 500px;
+}
+
+.content .right-border {
+    border-left: 2px solid black;
+    height: 100%;
+}
+.content .left {
+    padding: 0 10px;
+}
+
+.content .right {
+    padding-left: 20px;
+}
+
+/*tab css*/
+.tab {
+    float: right;
+    margin-right: -9px;
+}
+.tab>span {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border: 2px solid black;
+    border-bottom: initial;
+    padding: 5px 10px;
+    background-color: white;
+    float: left;
+    font-weight: bold;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.tab>span.selected {
+    background-color: #606060;
+    transform: scale(1.1);
+}
+
+/*popup page*/
+.popup {
+    position: absolute;
+    top: -9px;
+    left: 55px;
+    display: block;
+    height: 88px;
+    border: 2px solid black;
+    background-color: #E0EDD4;
+
+    border-radius: 15px;
+    width: 90%;
+    padding: 10px;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+.i1 {
+    position: absolute;
+    top: -50px;
+    left: 37px;
+    display: block;
+    height: 0;
+    width: 0;
+    font-size: 0;
+    line-height: 0;
+    border-color: transparent transparent black transparent;
+    border-style: dashed dashed solid dashed;
+    border-width: 25px;
+}
+
+.i2 {
+    position: absolute;
+    top: -22px;
+    left: -25px;
+    display: block;
+    height: 0;
+    width: 0;
+    font-size: 0;
+    line-height: 0;
+    border-color: transparent transparent #E0EDD4 transparent;
+    border-style: dashed dashed solid dashed;
+    border-width: 25px;
+}
+
+.popup input {
+    width: 100%;
+    margin-top:10px;
+}
+
+.popup .btn-area {
+    margin-top: 10px;
+}
+
+.popup .btn-area>button {
+    border-radius: 10px;
+    padding: 5px 10px;
     font-weight: bold;
 }
 
-.agent-name {
-    
+.popup.hidden {
+    display: none;
 }

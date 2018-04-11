@@ -6,43 +6,236 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="./responsive.css">
-    <script src="./lib/ajax.js"></script>
-    <script src="./lib/cruise.js"></script>
+    <link rel="stylesheet" href="./lib/cruise.css" />
+    <link rel="stylesheet" href="./lib/responsive.css" />
 </head>
 
 <body>
-    <div class="circle-border">
-        <div class="circle-icon"></div>
-        <div class="content-panel">
-            <div class="row">
-                <div class="agent-name col-md-6"></div>
-                <div class="rightTop-panel col-md-6">
-                    | <span>idle</span> | <span>192.168.1.2</span> | <span>/var/lib/cruise-agent</span>
-                </div>
-            </div>
-            
-            <div class="row">
-                <i class="plus"></i>
-                <span>|</span>
-                <div class="resource-container">
-                    <span>Resources:</span>
-                    <div class="resource">
-                        <span></span>
-                        <i class="remove"></i>
+    <div style="margin: 10px">
+        <div class="tab" onclick="OnTabClick()">
+            <span>DASHBOARD</span>
+            <span>MY CRUISE</span>
+            <span class="agent">AGENTS</span>
+            <span>HELP</span>
+        </div>
+        <div class="header row" onclick="OnCategoryClick()">
+            <span class="text-agent">Agent</span>
+            <div class="circle-border">All</div>
+            <div class="circle-border">Physical</div>
+            <div class="circle-border">Virtual</div>
+        </div>
+        <div class="content row">
+            <div class="col-md-9">
+                <div class="left">
+                    <div class="agent-info-container">
+                        <div class="circle-icon"></div>
+                        <div class="content-panel">
+                            <div class="row">
+                                <div class="agent-name col-md-6" title="i'm agent name">i'm agent name</div>
+                                <div class="rightTop-panel col-md-6" title="state|ip|url">
+                                    | <span>idle</span> | <span>192.168.1.2</span> | <span>/var/lib/cruise-agent</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div onclick="OnSpecifyResource()" style="display:inline-block">
+                                    <span class="plus">+</span>
+                                    <a href="" class="add-resource">Specify Resource</a>
+                                    
+                                </div>
+                                <div class="resource-container">
+                                    <span>| Resources:</span>
+                                    <div class="resource">
+                                        <span>ubuntm</span>
+                                        <i class="remove"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="deny-container">
+                            <i></i>
+                            <a href="">Deny</a>
+                        </div>
+                    </div>
+                    <div style="position:relative;">
+                        <div class="popup hidden">
+                            <i class="i1">
+                                <i class="i2">
+                                </i>
+                            </i>
+                            <div>(separate multiple resources name with commas)</div>
+                            <input type="text">
+                            <div class="btn-area">
+                                <button onclick="OnAdd()">Add resources</button><button onclick="OnClose()">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="agent-info-container building">
+                        <div class="circle-icon"></div>
+                        <div class="content-panel">
+                            <div class="row">
+                                <div class="agent-name col-md-6" title="i'm agent name">i'm agent name</div>
+                                <div class="rightTop-panel col-md-6" title="state|ip|url">
+                                    | <span>idle</span> | <span>192.168.1.2</span> | <span>/var/lib/cruise-agent</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div onclick="OnSpecifyResource()" style="display:inline-block">
+                                    <span class="plus">+</span>
+                                    <a href="" class="add-resource">Specify Resource</a>
+                                </div>
+                                <div class="resource-container">
+                                    <span>| Resources:</span>
+                                    <div class="resource">
+                                        <span>ubuntm</span>
+                                        <i class="remove"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="deny-container">
+                            <i></i>
+                            <a href="">Deny</a>
+                        </div>
+                    </div>
+                    <div style="position:relative">
+                        <div class="popup hidden">
+                            <i class="i1">
+                                <i class="i2">
+                                </i>
+                            </i>
+                            <div>(separate multiple resources name with commas)</div>
+                            <input type="text">
+                            <div class="btn-area">
+                                <button onclick="OnAdd()">Add resources</button><button onclick="OnClose()">Close</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="agent-info-container building">
+                        <div class="circle-icon"></div>
+                        <div class="content-panel">
+                            <div class="row">
+                                <div class="agent-name col-md-6" title="i'm agent name">i'm agent name</div>
+                                <div class="rightTop-panel col-md-6" title="state|ip|url">
+                                    | <span>idle</span> | <span>192.168.1.2</span> | <span>/var/lib/cruise-agent</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div onclick="OnSpecifyResource()" style="display:inline-block">
+                                    <span class="plus">+</span>
+                                    <a href="" class="add-resource">Specify Resource</a>
+                                </div>
+                                <div class="resource-container">
+                                    <span>| Resources:</span>
+                                    <div class="resource">
+                                        <span>ubuntm</span>
+                                        <i class="remove"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="deny-container">
+                            <i></i>
+                            <a href="">Deny</a>
+                        </div>
+                    </div>
+
+                    <div class="agent-info-container">
+                        <div class="circle-icon"></div>
+                        <div class="content-panel">
+                            <div class="row">
+                                <div class="agent-name col-md-6" title="i'm agent name">i'm agent name</div>
+                                <div class="rightTop-panel col-md-6" title="state|ip|url">
+                                    | <span>idle</span> | <span>192.168.1.2</span> | <span>/var/lib/cruise-agent</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div onclick="OnSpecifyResource()" style="display:inline-block">
+                                    <span class="plus">+</span>
+                                    <a href="" class="add-resource">Specify Resource</a>
+                                </div>
+                                <div class="resource-container">
+                                    <span>| Resources:</span>
+                                    <div class="resource">
+                                        <span>ubuntm</span>
+                                        <i class="remove"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="deny-container">
+                            <i></i>
+                            <a href="">Deny</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="deny-container">
-            <i></i>
-            <a href="">Deny</a>
+            <div class="col-md-3 right-border">
+                <div class="right">
+                    <h3>Summary</h3>
+                    <hr style="border-top:1px solid #d7d7d7;" />
+                    <table style="width:100%">
+                        <thead>
+                            <tr>
+                                <td style="width:50%"></td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>building</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Idle</td>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                    <h3>History</h3>
+                    <hr style="border-top:1px solid #d7d7d7;" />
+                </div>
+            </div>
         </div>
     </div>
+
+
+    <script src="./lib/ajax.js"></script>
+    <script src="./lib/cruise.js"></script>
     <script>
         GetCruiseInfo(function (resp) {
-            console.log(resp)
+            console.log(resp);
         })
+
+        function OnTabClick() {
+            //clear selected
+            var children = Array.prototype.slice.call(event.currentTarget.children);
+            children.forEach(function (child) {
+                child.className = child.className.replace(/selected/g, '').trim(' ');
+            });
+            event.target.className += ' selected'
+        }
+
+        function OnCategoryClick() {
+            this.OnTabClick();
+        }
+
+        function OnSpecifyResource(){
+            event.preventDefault();
+            document.querySelector('.popup').className =  document.querySelector('.popup').className.replace(/hidden/g, '').trim(' ');
+        }
+
+        function OnAdd() {
+            this.OnClose();
+        }
+
+        function OnClose() {
+            document.querySelector('.popup').className += ' hidden';
+        }
     </script>
 </body>
 
