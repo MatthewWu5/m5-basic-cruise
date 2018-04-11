@@ -39,3 +39,8 @@
 - [ ] summary table logic
 - [ ] history logic
 
+- [ ] how to find the closest .class element
+- [ ] support 1024+
+- [ ] validate input value
+- [ ] summary should recalc while switch the category
+

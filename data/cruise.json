@@ -55,6 +55,30 @@
             "Name": "bjstdmngbgr05.thoughtworks.com",
             "IP": "192.168.1.5",
             "Url": "/var/lib/cruise-agent"
+        },
+        {
+            "Type": 1,
+            "State": 0,
+            "Resources": [
+                "ubuntu"
+            ],
+            "Available": true,
+            "Id": 4,
+            "Name": "bjstdmngbgr06.thoughtworks.com",
+            "IP": "192.168.1.6",
+            "Url": "/var/lib/cruise-agent"
+        },
+        {
+            "Type": 1,
+            "State": 1,
+            "Resources": [
+                "ubuntu"
+            ],
+            "Available": true,
+            "Id": 4,
+            "Name": "bjstdmngbgr07.thoughtworks.com",
+            "IP": "192.168.1.7",
+            "Url": "/var/lib/cruise-agent"
         }
     ],
     "History": [
@@ -96,7 +120,19 @@
         },
         {
             "AgentId": 2,
-            "Url": "bjstdmngbgr02/Acceptance_test"
+            "Url": "bjstdmngbgr03/Acceptance_test"
+        },
+        {
+            "AgentId": 2,
+            "Url": "bjstdmngbgr04/Acceptance_test"
+        },
+        {
+            "AgentId": 2,
+            "Url": "bjstdmngbgr05/Acceptance_test"
+        },
+        {
+            "AgentId": 2,
+            "Url": "bjstdmngbgr06/Acceptance_test"
         }
     ]
 }

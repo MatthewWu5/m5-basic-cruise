@@ -13,44 +13,49 @@
 <body>
     <div style="margin: 10px">
         <span class="title">Cruise</span>
-        <div class="tab" onclick="OnTabClick()">
-            <span>DASHBOARD</span>
+        <div class="tab" onclick="OnTabClick(true)">
+            <span class="selected">DASHBOARD</span>
             <span>MY CRUISE</span>
             <span class="agent">AGENTS</span>
             <span>HELP</span>
         </div>
-        <div class="header row" onclick="OnCategoryClick()">
-            <span class="text-agent">Agent</span>
-            <div class="circle-border">All</div>
-            <div class="circle-border">Physical</div>
-            <div class="circle-border">Virtual</div>
+        <div class="header row">
+            <div onclick="OnCategoryClick()">
+                <span class="text-agent">Agent</span>
+                <div class="circle-border all">All</div>
+                <div class="circle-border physical">Physical</div>
+                <div class="circle-border virtual">Virtual</div>
+            </div>
         </div>
         <div class="content row">
-            <div class="col-md-9">
-                <div class="left"></div>
-            </div>
-            <div class="col-md-3 right-border">
-                <div class="right">
-                    <h3>Summary</h3>
-                    <hr style="border-top:1px solid #d7d7d7;" />
-                    <table style="width:100%">
-                        <thead>
+            <div>
+                <div class="col-md-9" style="overflow-y: auto;height: 100%;">
+                    <div class="left"></div>
+                </div>
+                <div class="col-md-3 right-border">
+                    <div class="right">
+                        <h3>Summary</h3>
+                        <hr style="border-top:1px solid #d7d7d7;" />
+                        <table style="width:100%">
+                            <thead>
+                                <tr>
+                                    <td style="width:50%"></td>
+                                    <td></td>
+                                </tr>
+                            </thead>
                             <tr>
-                                <td style="width:50%"></td>
-                                <td></td>
+                                <td>building</td>
+                                <td class="building-state"></td>
                             </tr>
-                        </thead>
-                        <tr>
-                            <td>building</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>Idle</td>
-                            <td>2</td>
-                        </tr>
-                    </table>
-                    <h3>History</h3>
-                    <hr style="border-top:1px solid #d7d7d7;" />
+                            <tr>
+                                <td>Idle</td>
+                                <td class="idle-state"></td>
+                            </tr>
+                        </table>
+                        <h3>History</h3>
+                        <hr style="border-top:1px solid #d7d7d7;" />
+                        <div class="history-panel"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -61,8 +66,62 @@
     <script>
         window.onload = function () {
             GetCruiseInfo(function (resp) {
-                GenerateAgentView(resp.Agents, document.querySelector('.content .left'));
+                setTimeout(function () {
+                    GenerateAgentView(resp.Agents, document.querySelector('.content .left'));
+                }, 100)
+                setTimeout(function () {
+                    GenerateHistoryView(resp.History, document.querySelector('.content .history-panel'));
+                }, 100)
+                var idleState = resp.Agents.filter(function (item) { return item.State == 0 }).length;
+                var buildingState = resp.Agents.filter(function (item) { return item.State == 1 }).length;
+                document.querySelector('.idle-state').innerHTML = idleState;
+                document.querySelector('.building-state').innerHTML = buildingState;
             })
+        }
+
+        function OnTabClick(isBase) {
+            //clear selected
+            var children = Array.prototype.slice.call(event.currentTarget.children);
+            children.forEach(function (child) {
+                child.className = child.className.replace(/selected/g, '').trim(' ');
+            });
+
+            var contentNode = document.querySelector('.content');
+            if (isBase) {
+                var headerNode = document.querySelector('.header');
+                if (event.target.className.indexOf('agent') != -1) {
+                    headerNode.className += ' agent';
+                    contentNode.className += ' agent all';
+
+                    //reset header selection
+                    var children = Array.prototype.slice.call(document.querySelector('.header>div').children);
+                    children.forEach(function (child) {
+                        child.className = child.className.replace(/selected/g, '').trim(' ');
+                    });
+                    document.querySelector('.header .all').className += ' selected';
+                } else {
+                    headerNode.className = headerNode.className.replace(/agent/g, '').trim(' ');
+                    contentNode.className = contentNode.className.replace(/agent/g, '').trim(' ');
+                }
+            } else {
+                contentNode.className = contentNode.className.replace(/all|physical|virtual/g, '').trim(' ');
+                if (event.target.className.indexOf('all') != -1) {
+                    contentNode.className += ' all';
+                } else if (event.target.className.indexOf('physical') != -1) {
+                    contentNode.className += ' physical';
+                } else if (event.target.className.indexOf('virtual') != -1) {
+                    contentNode.className += ' virtual';
+                }
+            }
+
+            event.target.className += ' selected'
+        }
+
+        function OnCategoryClick() {
+            if (event.target.className.indexOf('text-agent') != -1) {
+                return;
+            }
+            this.OnTabClick();
         }
     </script>
 </body>

@@ -10,9 +10,8 @@
 .agent-info-container {
     border-radius:10px;
     border: 1px solid black;
-    padding: 5px 10px;
+    padding: 0px 10px;
     position: relative;
-    /*min-width: 800px;*/
     overflow: hidden;
     background-color: #cce8b5;
     margin: 20px 5px;
@@ -24,12 +23,27 @@
 
 .circle-icon {
     border-radius:50%;
-    width: 50px;
-    height: 50px;
-    margin-top: 5px;
+    width: 40px;
+    height: 40px;
+    margin-top: 11px;
     background-color: #929292;
     float: left;
 }
+
+ @media screen and (max-width: 976px) {
+    .circle-icon {
+        width: 20px;
+        height: 20px;
+        margin-top: 20px;
+    }
+ }
+
+ @media screen and (max-width: 690px) {
+    .circle-icon {
+        width: 10px;
+        height: 10px;
+    }
+ }
 
 .content-panel {
     margin: 5px 10px;
@@ -57,6 +71,10 @@
 
 .resource-container, .resource {
     display: inline-block;
+}
+
+.resource .resource-text {
+    margin-left: 10px;
 }
 
 /*plus icon*/
@@ -88,6 +106,13 @@
 .header {
     background-color: #606060;
     height: 40px;
+}
+
+.header>div {
+    display: none;
+}
+.header.agent>div {
+    display: block;
 }
 
 .header .text-agent, .header .circle-border {
@@ -122,6 +147,22 @@
     height: 500px;
 }
 
+.content .all, .content .physical, .content .virtual {
+    display: none;
+}
+.content.all .physical, .content.all .virtual, .content.physical .physical, .content.virtual .virtual {
+    display: block;
+}
+
+.content>div {
+    display: none;
+}
+.content.agent>div {
+    display: block;
+    overflow: hidden;
+    height: 100%;
+}
+
 .content .right-border {
     border-left: 2px solid black;
     height: 100%;
@@ -132,6 +173,7 @@
 
 .content .right {
     padding-left: 20px;
+    height: 100%;
 }
 
 /*tab css*/
@@ -219,4 +261,20 @@
 
 .popup.hidden {
     display: none;
+}
+
+/*history css*/
+.history {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    width: calc(100% - 20px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.history-panel {
+    height: calc(100% - 200px);
+    overflow-y: auto;
 }
