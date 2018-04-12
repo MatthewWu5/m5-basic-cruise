@@ -75,11 +75,11 @@ function OnAdd() {
             errorText.className += ' display';
             labelText.className += ' hidden';
         }
-        throw 'error format...';
+        return;
     }
     labelText.className = labelText.className.replace(/hidden|\s/g, '');
     errorText.className = errorText.className.replace(/display|\s/g, '');
-    
+
     var self = this;
     input.value.split(', ').forEach(function (value) {
         var div = document.createElement('div');
