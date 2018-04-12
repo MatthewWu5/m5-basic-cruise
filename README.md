@@ -45,5 +45,6 @@
 - [ ] summary should recalc while switch the category
 
 - [ ] deny icon
-- [ ] remove
+- [x] remove
+- [ ] validate input string on Add
 

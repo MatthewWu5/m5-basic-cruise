@@ -71,10 +71,12 @@
 
 .resource-container, .resource {
     display: inline-block;
+    position: relative;
 }
 
 .resource .resource-text {
-    margin-left: 10px;
+    margin-left: 15px;
+    margin-right: 10px;
 }
 
 /*plus icon*/
@@ -87,12 +89,6 @@
     left: 0px;
     cursor: pointer;
 }
-
-/*i.plus {height:40px; width:40px; display:block; position:relative;} 
-
-.plus:before, .plus:after{content:''; height:2px; width:40px; display:block; background:#333; border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px; position:absolute; top:16px; left:0px;}
-
-.plus:after{height:40px; width:2px; top:0; left:16px; }*/
 
 .add-resource {
     margin-left: 20px;
@@ -277,4 +273,19 @@
 .history-panel {
     height: calc(100% - 200px);
     overflow-y: auto;
+}
+
+/*remove btn css*/
+.remove {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    display: inline-block;
+    position: absolute;
+    font-size: 26px;
+    right: -4px;
+    top: -5px;
+    cursor: pointer;
 }

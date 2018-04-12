@@ -88,6 +88,7 @@
 
             var contentNode = document.querySelector('.content');
             if (isBase) {
+                //switch tab
                 var headerNode = document.querySelector('.header');
                 if (event.target.className.indexOf('agent') != -1) {
                     headerNode.className += ' agent';
@@ -104,6 +105,7 @@
                     contentNode.className = contentNode.className.replace(/agent/g, '').trim(' ');
                 }
             } else {
+                //switch category
                 contentNode.className = contentNode.className.replace(/all|physical|virtual/g, '').trim(' ');
                 if (event.target.className.indexOf('all') != -1) {
                     contentNode.className += ' all';
@@ -112,6 +114,14 @@
                 } else if (event.target.className.indexOf('virtual') != -1) {
                     contentNode.className += ' virtual';
                 }
+
+                //hide popup when switch category
+                var popups = Array.prototype.slice.call(document.querySelectorAll('.popup'));
+                popups.forEach(function (popup) {
+                    if (!/hidden/g.test(popup.className)) {
+                        popup.className += ' hidden';
+                    }
+                })
             }
 
             event.target.className += ' selected'
