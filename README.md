@@ -4,7 +4,7 @@
 
 - [x] Write a model for the ui
 - [x] Write a ajax method for json file
-- [ ] Write a component for the agent detail
+- [x] Write a component for the agent detail
     1. circle border
     1. black circle icon
     1. close button
@@ -20,28 +20,26 @@
 - [x] Write the tab(dashboard/my cruise/agents/help)
 - [ ] Compatible with IE9
 - [ ] Write the login page, user/psw from json file
-- [ ] Use css3 query media to responsive
+- [x] Use css3 query media to responsive
 
 - [ ] Write a pro-cruise
     1. use es6, babel to convert
     2. webpack to package
-    3. 
 
 ## To implement
 
-- [ ] popup
+- [x] popup
     1. add data to panel
     2. remove btn
-- [ ] deny icon
-- [ ] switch tab to load data
-- [ ] switch category to filter data
-- [ ] makesure the ui in screen 1024, currently there is a issue
-- [ ] summary table logic
-- [ ] history logic
+- [x] switch tab to load data
+- [x] switch category to filter data
+- [x] makesure the ui in screen 1024, currently there is a issue
+- [x] summary table logic
+- [x] history logic
 
-- [ ] how to find the closest .class element
-- [ ] support 1024+
-- [ ] validate input value
+- [x] how to find the closest .class element
+- [x] support 1024+
+- [x] validate input value
 - [ ] summary should recalc while switch the category
 
 - [ ] deny icon
