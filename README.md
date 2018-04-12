@@ -1,3 +1,8 @@
+# How to run
+- Host the files with a static server
+- Open the index.html in dest `/dest/index.html`
+- Rebuild by `npm start`
+
 # Requirement
 
 ## Implement Point
@@ -9,7 +14,7 @@
     1. black circle icon
     1. close button
 
-- [ ] Write a popup by add resources
+- [x] Write a popup by add resources
     1. verify logic => the resource should in a collection which is defined before
 
 - [x] Write the UI of agent container and sidebar
@@ -18,7 +23,7 @@
     3. History layout
 
 - [x] Write the tab(dashboard/my cruise/agents/help)
-- [ ] Compatible with IE9
+- [x] Compatible with IE9+
 - [ ] Write the login page, user/psw from json file
 - [x] Use css3 query media to responsive
 
@@ -44,5 +49,5 @@
 
 - [ ] deny icon
 - [x] remove
-- [ ] validate input string on Add
+- [x] validate input string on Add
 
