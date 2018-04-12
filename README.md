@@ -44,3 +44,6 @@
 - [ ] validate input value
 - [ ] summary should recalc while switch the category
 
+- [ ] deny icon
+- [ ] remove
+
