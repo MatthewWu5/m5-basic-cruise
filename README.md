@@ -51,3 +51,21 @@
 - [x] remove
 - [x] validate input string on Add
 
+## To improve and Refactor
+
+- [] deny action => disable controls
+- [] save data in localstorage
+- [] avoid duplicate name on popup
+- [] add test
+- [] popup should has a mask
+- [] html5 semantic tags
+- [] the enter key should effect on popup page
+- recalculate summary data by switch category
+- recalc history by agent id
+- cannot update data to json files
+- use gulp to replace script files from dev page => dest page
+- limit the min width
+- deny icon
+- the tab should remove the underline
+- limit the width of resource on popup
+
