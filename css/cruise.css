@@ -21,6 +21,10 @@
     background-color: #fffbb9;
 }
 
+.agent-info-container.denied {
+    background-color: grey;
+}
+
 .circle-icon {
     border-radius:50%;
     width: 40px;
