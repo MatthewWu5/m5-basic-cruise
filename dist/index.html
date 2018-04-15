@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/cruise.min.css" />
-    <link rel="stylesheet" href="./css/responsive.min.css" />
+    <link rel="stylesheet" href="./css/cruise-8ca395510e.css" />
+    <link rel="stylesheet" href="./css/responsive-c18b3d5b91.css" />
 </head>
 
 <body>
@@ -61,8 +61,9 @@
         </div>
     </div>
 
-    <script src="./js/ajax.min.js"></script>
-    <script src="./js/cruise.min.js"></script>
+    <script src="./js/ajax-93966bcc96.js"></script>
+    <script src="./js/cruise-2ff9e67f8d.js"></script>
+    <script src="./js/store-18288a9e7b.js"></script>
     <script>
         window.onload = function () {
             GetCruiseInfo(function (resp) {
@@ -76,7 +77,21 @@
                 var buildingState = resp.Agents.filter(function (item) { return item.State == 1 }).length;
                 document.querySelector('.idle-state').innerHTML = idleState;
                 document.querySelector('.building-state').innerHTML = buildingState;
+
+                InitUI();
             })
+        }
+
+        function InitUI() {
+            var category = GetCategory();
+                if (category != 0) {
+                    var categoryClass = 'physical';
+                    if (category == 2) {
+                        categoryClass = 'virtual';
+                    }
+                    document.querySelector('.tab .agent').click();
+                    document.querySelector('.header .' + categoryClass).click();
+                }
         }
 
         function OnTabClick(isBase) {
@@ -105,15 +120,21 @@
                     contentNode.className = contentNode.className.replace(/agent/g, '').trim(' ');
                 }
             } else {
+                //get current category
+                var currentCategory = 0;
                 //switch category
                 contentNode.className = contentNode.className.replace(/all|physical|virtual/g, '').trim(' ');
                 if (event.target.className.indexOf('all') != -1) {
                     contentNode.className += ' all';
                 } else if (event.target.className.indexOf('physical') != -1) {
                     contentNode.className += ' physical';
+                    currentCategory = 1;
                 } else if (event.target.className.indexOf('virtual') != -1) {
                     contentNode.className += ' virtual';
+                    currentCategory = 2;
                 }
+
+                SetCategory(currentCategory);
 
                 //hide popup when switch category
                 var popups = Array.prototype.slice.call(document.querySelectorAll('.popup'));

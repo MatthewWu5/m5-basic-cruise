@@ -1,0 +1,1 @@
+function Storage(){}function _getCruise(){var e=window.localStorage.getItem("cruise");try{var t=JSON.parse(e)}catch(e){console.error(e)}return t||(t={Agents:[],Category:0}),t}function _setCruise(e){window.localStorage.setItem("cruise",JSON.stringify(e))}function SetCategory(e){var t=_getCruise();t.Category=e,_setCruise(t)}function GetCategory(){return _getCruise().Category}

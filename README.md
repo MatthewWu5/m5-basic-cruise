@@ -53,17 +53,19 @@
 
 ## To improve and Refactor
 
-- [] deny action => disable controls
-- [] save data in localstorage
-- [] avoid duplicate name on popup
-- [] add test
-- [] popup should has a mask
-- [] html5 semantic tags
-- [] the enter key should effect on popup page
+- [x] deny action => disable controls
+- [x] save data in localstorage
+- [ ] avoid duplicate name on popup
+- [ ] add test
+- [ ] popup should has a mask
+- [ ] html5 semantic tags
+- [ ] the enter key should effect on popup page
+- [x] use gulp to replace script files from dev page => dest page
+    But why the second time copy index.html => dest/index.html can be success???
+
 - recalculate summary data by switch category
 - recalc history by agent id
 - cannot update data to json files
-- use gulp to replace script files from dev page => dest page
 - limit the min width
 - deny icon
 - the tab should remove the underline
